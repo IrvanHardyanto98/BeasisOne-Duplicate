@@ -1,0 +1,56 @@
+.welcome{
+    text-align: center;
+}
+.progressbar ul{
+    list-style: none;
+    postition: relative;
+}
+
+.progressbar ul:before{
+    content:''; 
+    position:absolute;
+    width: 2px;
+    height: 24vh;
+    background: white;
+}
+
+.progressbar ul li{
+    padding : 10px 20px;  
+}
+
+.progressbar ul li span{
+    background-color: rgb(46,45,63);
+    position: absolute;
+    text-align: center;
+    left: 3vw;
+    border:2px solid white;
+    width:30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    color: white;
+}
+  
+.message{
+    padding: 2px;
+    border: 2px solid white;
+    box-sizing: border-box;
+    width: 15vw;
+}
+.btn_textarea{
+    position: absolute;
+    top: 270px;
+    left: 620px;
+}
+
+.docs_form{
+  padding: 10px 10px;
+  display: inline-block;  
+}
+.docs_upload{
+  border: 1px solid red;
+  display:inline-block;
+}
+.upload{
+  display: inline-block;
+}

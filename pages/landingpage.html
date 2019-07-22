@@ -3,6 +3,7 @@
 <head>
 	<title></title>
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/style.css">
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -14,15 +15,30 @@
 			<div class="col-4" style="background-color: rgb(46,45,63)">
 				<div class="row align-items-center justify-content-center" style="height:100vh">
 					<div class="col text-light">
-						<h1>Welcome to</h1>
-						<img src="../resources/images/logotb.png" height="60" width="350">
-						<div><!--vertical scalable progress bar-->
-							
+						<div class="welcome">
+							<h1>Welcome to</h1>
+							<img src="../resources/images/logotb.png" height="60" width="350">
+						</div>
+						<div class="progressbar"><!--vertical scalable progress bar-->
+							<ul>
+								<li>
+									<span>&#10004;</span>
+									<div class="message">Personal Detail</div>
+								</li>
+								<li>
+									<span></span>
+									<div class="message">Create Campaign</div>
+								</li>
+								<li>
+									<span></span>
+									<div class="message">Upload Docs</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 				</div>	
 			</div>
-			<div class="col-8" style="height: 100vh;overflow: auto">
+			<div class="col-8" style="height: 100vh;overflow: auto;padding-top: 20px">
 				<h2>Thank you for joining!</h2>
 				<p>First of all, tell us a bit about yourself</p>
 				<form>
@@ -46,14 +62,14 @@
 					</div>
 					&nbsp;
 					<div class="d-inline-block form-group">
-						<label><h6>Gender</h6></label>
+						<label><h6>Jenis Kelamin</h6></label>
 						<div>
-							<input type="radio" name="gender" class="d-inline-block" value="0">Male
+							<input type="radio" name="gender" class="d-inline-block" value="0">Laki-laki
 							&nbsp;
 							&nbsp;
 							&nbsp;
 							&nbsp;
-							<input type="radio" name="gender" class="d-inline-block" value="1">Female
+							<input type="radio" name="gender" class="d-inline-block" value="1">Perempuan
 						</div>					
 					</div>
 					<div class="form-group">
@@ -132,9 +148,9 @@
 						<input type="text" class="form-control form-control-sm">
 					</div>
 					<div class="align-items-end">
-						<button>
+						<a class="btn btn-primary" href="story.html">
 							lanjut	
-						</button>
+						</a>
 					</div>
 					
 					
