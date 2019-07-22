@@ -1,0 +1,72 @@
+#YOUTUBE THUMBNAIL 
+https://img.youtube.com/vi/<insert-youtube-video-id-here>/sddefault.jpg
+
+Database Design
+
+# campaigns
+- id_campaign - int (primary_key)
+- title - string
+- video - string
+- target_donation - int
+- current_donation - int
+- url_transkrip - string
+- url_sr - string
+- story - Text
+- tipe - boolean
+- foto1 - string
+- foto2 - string
+- foto3 - string
+- id_student - int (foreign key students)
+- donor_counts - int
+- adopsi_counts - int
+
+#payments
+- id_paymentcf - int (primary)
+- id_student - int (fk students)
+- id_donor - int (fk donors)
+- amount - int
+- type - boolean (True = crowd, False=adopt)
+- is_anonymous - boolean
+
+#updates
+- id_updates - int (primary_key)
+- id_campaign - int
+- foto - stirng
+- description - text
+
+#chats
+- id_campaign - int  
+- id_user - int
+- role - boolean (True = student, False = donors)
+- message - text
+
+#students
+- id_student - int
+- username - string
+- password - string
+- nama_lengkap - string
+- dob - date
+- pob - string
+- jk - boolean
+- universitas - string
+- jurusan - string
+- nim - string
+- ipk - float
+- alamat - string
+- kelurahan - varchar
+- kecamatan - varchar
+- kabupaten - varchar
+- provinsi - varchar
+- kodepos - varchar
+- rt - varchar
+- rw - varchar
+- notelp - varchar
+- foto - string
+
+#donors
+- id_donor - int
+- email - varchar
+- password - string
+- name - varchar
+- foto - string
+
