@@ -113,3 +113,42 @@
 #third_content{
     display: none;
 }
+
+.student_photo{
+    background-color: rgb(74,74,74);
+    display: inline-block;
+    justify-content: center;
+    padding:10px;
+    border-radius: 20px;
+}
+
+.student_info{
+    background-color: white;
+    padding:1em;
+}
+
+.student_fields ul li{
+    padding-bottom: 1em;
+}
+
+.my_content{
+  width:25em;
+  display: inline-block;
+  padding-bottom: 0;
+  background-color: rgb(235,235,235);
+  text-align: center;
+}
+
+.btn_primary{
+    width: 100%;
+    padding:0.5em;
+    border: 1px solid rgb(46,45,63);
+    border-radius: 4px;
+    background-color: rgb(46,45,63);
+    color: white;
+}
+.login_form{
+    background-color: white;
+    padding: 2em;
+    text-align: center;
+}
