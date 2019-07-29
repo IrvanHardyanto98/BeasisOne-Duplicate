@@ -16,8 +16,8 @@
 				<div class="row align-items-center justify-content-center" style="height:100vh">
 					<div class="col text-light">
 						<div class="welcome">
-							<h1>Welcome to</h1>
-							<img src="../resources/images/logotb.png" height="60" width="350">
+							<img src="../resources/images/logotb.png" height="60" width="350">\
+							<h3>Mulai Buat Campaignmu</h3>
 							<p>Ikuti langkah di bawah ini untuk mendapatkan kesempatan menerima beasiswa dari para donatur</p>
 						</div>
 						<div class="progressbar"><!--vertical scalable progress bar-->
@@ -25,6 +25,10 @@
 								<li>
 									<span>&#10004;</span>
 									<div class="message">Personal Detail</div>
+								</li>
+								<li>
+									<span>&#10004;</span>
+									<div class="message">Detail Campaign</div>
 								</li>
 								<li>
 									<span>&#10004;</span>
@@ -41,7 +45,7 @@
 			</div>
 			<div class="col-8" style="height: 100vh;overflow: auto;padding-top: 20px">
 				<h2>Upload Dokumen yang Diperlukan</h2>
-				<form style="padding-top: 100px">
+				<form style="padding-top: 100px" method="POST" action="../php/formstudent.php" enctype="multipart/form-data">
 				<div class="docs_form">
 					<div class="form-group">
 						<label><h6>Transkrip</h6></label>
@@ -52,22 +56,44 @@
 					<div class="form-group">
 						<label><h6>Surat Pernyataan Orangtua</h6></label>
 					</div>
+					<div class="form-group">
+						<label><h6>Foto Dengan Rumah 1</h6></label>
+					</div>
+					<div class="form-group">
+						<label><h6>Foto Dengan Rumah 2</h6></label>
+					</div>
+					<div class="form-group">
+						<label><h6>Foto Dengan Rumah 3</h6></label>
+					</div>
 				</div>
 				<div class="upload">
 					<div>
-						<input type="file">
+						<input name="transkrip" type="file">
 					</div>
 					<br>
 					<div>
-						<input type="file">
+						<input name="suratrekomendasi" type="file">
 					</div>
 					<br>
 					<div>
-						<input type="file"><br>
-					</div>							
+						<input name="pendapatan_ot" type="file">
+					</div>
+					<br>
+					<div>
+						<input name="foto1" type="file">
+					</div>
+					<br>
+					<div>
+						<input name="foto2" type="file">
+					</div>
+					<br>
+					<div>
+						<input name="foto3" type="file">
+					</div>								
 				</div>
+				<input id="btn_upload_docs" type="submit" name="btn_upload_docs" class="d-none">
 				</form>
-				<a class="btn btn-primary" href="uploaddocs.html">
+				<a class="btn btn-primary text-light" onclick="$('#btn_upload_docs').click();">
 							Simpan	
 						</a>
 			</div>

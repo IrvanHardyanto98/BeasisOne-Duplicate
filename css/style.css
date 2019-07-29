@@ -10,7 +10,7 @@
     content:''; 
     position:absolute;
     width: 2px;
-    height: 24vh;
+    height: 30vh;
     background: white;
 }
 
@@ -33,14 +33,11 @@
   
 .message{
     padding: 2px;
-    border: 2px solid white;
+    border: 2px solid rgb(46,45,63);
     box-sizing: border-box;
     width: 15vw;
 }
 .btn_textarea{
-    position: absolute;
-    top: 270px;
-    left: 620px;
 }
 
 .btn_textarea:hover,
@@ -122,6 +119,11 @@
     border-radius: 20px;
 }
 
+.student_photo img{
+    max-width: 75%;
+    max-height: 75%;
+}
+
 .student_info{
     background-color: white;
     padding:1em;
@@ -151,4 +153,32 @@
     background-color: white;
     padding: 2em;
     text-align: center;
+}
+
+.form_campaign{
+    padding-top: 20px;
+    width: 80%;
+}
+.btn_kembali{
+    border: 2px solid rgb(0,166,255);
+    background-color:white;
+    width: 10em;
+}
+
+.btn_lanjut{
+    border:2px solid rgb(19,161,215);
+    background-color: rgb(19,161,215);
+    width: 10em;
+}
+
+.campaign_step{
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 120%;
+}
+
+.help_image{
+    height: 10em; 
+    width: 10em;
 }

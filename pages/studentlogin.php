@@ -5,8 +5,10 @@
 	<link rel="stylesheet" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" href="../css/style.css">
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/logic.js"></script>
 </head>
 <body style="height: 100%;width: 100%">
 	<div class="container" style="height: 100%;max-width: 100%">
@@ -19,16 +21,27 @@
 			<div class="login_form" style="background-color: white;padding: 2em;text-align: center">
 				<div style="margin-bottom: 2em">
 					<h3>Login ke Akun Anda</h3>
-					Belum Punya akun?Klik disini
+					Belum Punya akun?Klik <a href="studentregister.php">disini</a>
 				</div>
-				<form>
+				<?php
+						session_start();
+						if(isset($_SESSION['login_error'])){
+							echo "<div class='alert alert-danger'>".$_SESSION['login_error']."</div>";
+						}else if(isset($_SESSION['logout_notification'])){
+							echo "<div class='alert alert-success'>".$_SESSION['logout_notification']."</div>";
+						}else if(isset($_SESSION['failed_login'])){
+							echo "<div class='alert alert-danger'>".$_SESSION['failed_login']."</div>";
+						}
+						session_destroy();
+				?>
+				<form id="student_login" method="POST" action="../php/logic.php">
 					<div class="form-group">
-						<input type="text" name="" placeholder="Email/username" class="form-control">
+						<input type="text" id="username" name="username" placeholder="Email/username" class="form-control">
 					</div>
 					<div class="form-group">
-						<input type="password" name="" placeholder="Password" class="form-control">
+						<input type="password" id="password" name="password" placeholder="Password" class="form-control">
 					</div>
-					<button class="btn_primary">Masuk</button>
+					<input id="btn_masuk" type="submit" name="btnLogin" value="Masuk" class="btn_primary">		
 				</form>
 					<a>Lupa Password?</a>
 			</div>
