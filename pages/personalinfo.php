@@ -86,17 +86,11 @@ include('../php/session.php');
 					</div>
 					<div class="form-group">
 						<label><h6>Universitas</h6></label>
-						<select name="universitas" class="form-control form-control-sm" required>
-							<option>ITB</option>r
-							<option>UI</option>
-						</select>
+						<input type="text" name="universitas" class="form-control form-control-sm" required>
 					</div>
 					<div class="form-group">
 						<label><h6>Jurusan</h6></label>
-						<select name="jurusan" class="form-control form-control-sm" required>
-							<option>teknik</option>
-							<option>pskologi</option>
-						</select>
+						<input type="text" name="jurusan" class="form-control form-control-sm" required>
 					</div>
 					<div class="d-inline-block form-group">
 						<div class="d-inline-block">
