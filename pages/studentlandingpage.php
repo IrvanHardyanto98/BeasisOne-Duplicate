@@ -13,10 +13,9 @@
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <style>
-    	/* Mobile Styles */
-@media only screen and (max-width: 400px) {
+ @media only screen and (max-width: 349px) {
 	#bbody, #imgg, #textt {
-		height: 50%;
+		height: 90%;
 	}
 	.text-biasa{
 		font-size: 80%;
@@ -30,9 +29,30 @@
 	.langkah{
 		font-size: 70%;
 	}
-	.text-paragraf{
-		font-size: 50%;
+
+	#logo{
+		width:70%;
 	}
+
+}
+    	/* Mobile Styles */
+@media only screen and (min-width: 350px) and (max-width: 400px) {
+	#bbody, #imgg, #textt {
+		height: 60%;
+	}
+	.text-biasa{
+		font-size: 80%;
+	}
+	.text-judul{
+		font-size: 120%;
+	}
+	#textt{
+		width: 80%;
+	}
+	.langkah{
+		font-size: 70%;
+	}
+
 	#logo{
 		width:70%;
 	}
@@ -42,7 +62,7 @@
 /* Tablet Styles */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
 	#bbody, #imgg, #textt {
-		height: 70%;
+		height: 90%;
 	}
 	.text-biasa{
 		font-size: 100%;
@@ -56,10 +76,6 @@
 	.langkah{
 		font-size: 90%;
 	}
-	.text-paragraf{
-		font-size: 70%;
-	}
-
 
 
 }
@@ -75,6 +91,9 @@
 	.text-judul{
 		font-size: 200%;
 	}
+	#divv{
+		height: 100%;
+	}
 	#textt{
 		width: 45%;
 	}
@@ -86,7 +105,7 @@
 		<div class="row" style="height:10%;background-color: rgb(46,45,63)">
 			<div style="width: 100%;display: flex;justify-content: flex-end;align-items: center;padding-right: 3em" >
 <!-- 				<h1><b><span class="logo" style="color:rgb(56,182,255)">Beasis</span><span class="logo" style="color:rgb(253,213,79)">ON</span><span class="logo" style="color:rgb(56,182,255)">e</span></b></h1> -->
-				<img  id="logo"  class="img-responsive fit-image " src="../resources/images/logotb.png">
+				<img  id="logo"  class="img-responsive fit-image pb-4" src="../resources/images/logotb.png">
 			</div>			
 		</div>
 		<div class="row" id="bbody">

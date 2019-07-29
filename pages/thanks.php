@@ -23,7 +23,8 @@
 					<h1 style="color:black;">Terima Kasih telah mendaftarkan email anda</h3>
 						<br>
 					<h5>Kami akan mengirimkan info lebih lanjut ke alamat email yang telah anda daftarkan</h3>
-						<button class="">Kembali ke Landing Page</button>
+						<button type="button" class="btn btn-primary" onclick="location.href = 'studentlandingpage.php';">OK</button>
+
 				</div>
 <!-- 				<?php
 						// session_start();
