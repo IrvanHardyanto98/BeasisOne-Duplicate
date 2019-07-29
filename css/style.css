@@ -182,3 +182,17 @@
     height: 10em; 
     width: 10em;
 }
+
+.campaign_progress{
+    background-color: white;
+    margin-top: 1em;
+}
+
+.photo_slide{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.logo{
+    font-size: 150%;
+}

@@ -19,7 +19,7 @@ include('../php/session.php');
 				<div class="row align-items-center justify-content-center" style="height:100vh">
 					<div class="col text-light">
 						<div class="welcome">
-							<img src="../resources/images/logotb.png" height="60" width="350">
+							<img src="../resources/images/logotb.png">
 							<h3>Mulai Buat Campaignmu</h3>
 							<p>Ikuti langkah di bawah ini untuk mendapatkan kesempatan menerima beasiswa dari para donatur</p>
 						</div>

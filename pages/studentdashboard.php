@@ -22,7 +22,7 @@
 	<div class="container" style="max-width: 100%">
 		<div class="row" style="height:15vh;background-color: rgb(46,45,63);align-content: center ">
 			<div>
-				<img src="../resources/images/logotb.png" height="60" width="350">
+				<img src="../resources/images/logotb.png">
 			</div>
 			<div>
 				<a href="../php/logout.php" class="btn btn-danger">logout</a>
@@ -92,6 +92,43 @@
 					<?php
 						echo "<h4>".$data->title."</h4>";
 						echo "<p>".$data->story."</p";
+					?>
+				</div>
+				<div class="foto_rumah">
+					<h2>Foto di Rumah</h2>
+					<hr>
+					<div style="display: flex;justify-content: center">
+					<?php
+						if(isset($data->foto1)){
+							echo "<div class='photo_slide'>";
+							echo "<img src='".$data->foto1."'height=200 width=200>";
+							echo "</div>";
+						}else{
+
+						}
+						if(isset($data->foto2)){
+							echo "<div class='photo_slide'>";
+							echo "<img src='".$data->foto2."'height=200 width=200>";
+							echo "</div>";
+						}else{
+
+						}
+
+						if(isset($data->foto3)){
+							echo "<div class='photo_slide'>";
+							echo "<img src='".$data->foto3."'height=200 width=200>";
+							echo "</div>";
+						}else{
+
+						}
+					?>
+					</div>
+				</div>
+				<div class="campaign_progress">
+					<h2>Progress Campaign</h2>
+					<hr>
+					<?php
+						echo "Terkumpul Rp. ".$data->target_donation." dari Rp. ".$data->current_donation;
 					?>
 				</div>
 			</div>

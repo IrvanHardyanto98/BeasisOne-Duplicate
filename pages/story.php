@@ -16,7 +16,7 @@
 		<div class="row" style="height:100vh">
 			<div id="video_hint_modal" class="modal">
 				<div class="modal-content my_content">
-					<img src="../resources/images/logotb.png" height="40" width="270">
+					<img src="../resources/images/logotb.png">
 					<h1>Contoh</h1>
 					<h1>Video</h1>
 					<!--video icon goes here-->

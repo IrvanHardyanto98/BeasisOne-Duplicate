@@ -14,12 +14,12 @@
 <body style="height: 100%">
 	<div class="container" style="height:100%;max-width: 100%">
 		<div class="row" style="height:15%;background-color: rgb(46,45,63)">
-			<div style="width: 100%;display: flex;justify-content: flex-end;" >
-				<img class="align-self-end" src="../resources/images/beasiswa1.png">
+			<div style="width: 100%;display: flex;justify-content: flex-end;align-items: center;padding-right: 3em" >
+				<h1><b><span class="logo" style="color:rgb(56,182,255)">Beasis</span><span class="logo" style="color:rgb(253,213,79)">ON</span><span class="logo" style="color:rgb(56,182,255)">e</span></b></h1>
 			</div>			
 		</div>
-		<div class="row" style="height: 85%">
-			<img style="position:absolute;z-index: -1" src='../resources/images/background.jpg' height="85%" width="100%">
+		<div class="row" style="height: 100%">
+			<img style="object-fit: cover;position:absolute;z-index: -1" src='../resources/images/background.jpg' height="100%" width="100%">
 			<div style="z-index: 1;background-color: rgba(81,81,81,0.6);width: 100%">
 				<div class="text-light" style="width: 45%;height: 100%;padding:1em">
 					<div style="margin-top: 10%">
@@ -55,38 +55,43 @@
 				</div>
 			</div>
 		</div>
-		<div class="row" style="justify-content: center;padding-top: 50px">
+		<div class="row" style="justify-content: center;padding-top: 5%">
 			<div style="text-align: center;width:60%;font-size: 120%">
 				<p>
 				<b>Sebagai siswa, kamu dapat membuat campaign beasiswa dan mengumpulkan dana dari para donator untuk membiayai kuliah kamu. Dana yang terkumpul nantinya akan langsung disalurkan ke universitas tempat kamu kuliah, sehingga kamu dapat fokus untuk belajar:)</b>
 				</p>
 			</div>
 			<div style="width: 100%">
-				<div style="margin-top: 50px;margin-bottom:2em;text-align: center">
+				<div style="margin-top: 3%;margin-bottom:1%;text-align: center">
 					<h1>Langkah-Langkah Membuat Campaign Beasiswa:</h1>
 				</div>
-				<div style="display: flex;justify-content: center;align-items: center;margin-bottom: 4em">
+				<div>
+					<img style="object-fit: cover;position:absolute;z-index: -1" src='../resources/images/tutorial.jpg' width="100%">
+				</div>
+			</div>
+
+<!-- 				<div style="display: flex;justify-content: center;align-items: center;">
 					<div class="campaign_step">
-						<img class="help_image" src="../resources/images/register.PNG">
+						<img class="help_image" src="../resources/images/register.PNG" width="105%" height="105%" style="margin-right: 100%">
 						<p>Daftar ke website BeasiswaONe</p>
 					</div>
-					<img src="../resources/images/segitiga.png" width="80" height="80">
+					<img src="../resources/images/segitiga.png" width="5%" height="5%">
 					<div class="campaign_step">
-						<img class="help_image" src="../resources/images/uploaddocs.PNG">
+						<img class="help_image" src="../resources/images/uploaddocs.PNG" style="margin-left: 15%">
 						<p>Isi data diri dan upload dokumen yang diperlukan</p>
 					</div>
-					<img src="../resources/images/segitiga.png" width="80" height="80">
+					<img src="../resources/images/segitiga.png" width="5%" height="5%">
 					<div class="campaign_step">
-						<img class="help_image" src="../resources/images/uploadstory.JPG" style="width: 12em">
+						<img class="help_image" src="../resources/images/uploadstory.JPG" style="width: 70%;margin-left: 15%">
 						<p>Tulis cerita serta upload video kamu untuk donator</p>
 					</div>
-					<img src="../resources/images/segitiga.png" width="80" height="80">
+					<img src="../resources/images/segitiga.png" width="5%" height="5%">
 					<div class="campaign_step">
-						<img class="help_image" src="../resources/images/student.png">
+						<img class="help_image" src="../resources/images/student.png" style="width:70%;margin-left: 15%">
 						<p>Selamat, kamu berhasil membuat campaign!</p>
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </body>

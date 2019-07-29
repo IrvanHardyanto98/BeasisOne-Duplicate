@@ -14,7 +14,7 @@
 	<div class="container" style="height: 100%;max-width: 100%">
 		<div class="row" style="height:15%;background-color: rgb(46,45,63);align-content: center ">
 			<div>
-				<img src="../resources/images/logotb.png" height="60" width="350">
+				<img src="../resources/images/logotb.png">
 			</div>
 		</div>
 		<div class="row" style="background-color: rgb(235,235,235);justify-content: center;height: 85%;padding: 3em">

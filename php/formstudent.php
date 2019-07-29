@@ -171,8 +171,8 @@
 		$result = sendPostRequestWithoutEncoding($url,$email);
 		$result_array=json_decode($result,true);
 		if($result_array['success']==true){
-			$_SESSION['success_add_email']="Email tercatat, terimakasih atas partisipasinya!";
-			header("Location: ../pages/studentlandingpage.php");
+			//$_SESSION['success_add_email']="Email tercatat, terimakasih atas partisipasinya!";
+			header("Location: ../pages/thanks.php");
 		}
 	}
 ?>
