@@ -45,35 +45,39 @@
 			</div>
 			<div class="col-8" style="height: 100vh;overflow: auto;padding-top: 20px">
 				<h2>Upload Dokumen yang Diperlukan</h2>
+				<?php
+					if(isset($_SESSION['error_message'])){
+						echo "<div class='alert alert-danger'>".$_SESSION['error_message']."</div>";
+					}
+				?>
 				<form style="padding-top: 100px" method="POST" action="../php/formstudent.php" enctype="multipart/form-data">
 				<div class="docs_form">
 					<div class="form-group">
-						<label><h6>Transkrip</h6></label>
+						<label><h6>Transkrip Nilai Semester Terakhir</h6></label>
 					</div>
-					<div class="form-group">
+<!-- 					<div class="form-group">
 						<label><h6>Surat Rekomendasi Universitas</h6></label>
+					</div> -->
+					<div class="form-group">
+						<label><h6>Surat Keterangan Tidak Mampu</h6></label>
 					</div>
 					<div class="form-group">
-						<label><h6>Surat Pernyataan Orangtua</h6></label>
+						<label><h6>Foto Rumah (Depan)</h6></label>
 					</div>
 					<div class="form-group">
-						<label><h6>Foto Dengan Rumah 1</h6></label>
+						<label><h6>Foto Rumah (Kamar Mandi)</h6></label>
 					</div>
 					<div class="form-group">
-						<label><h6>Foto Dengan Rumah 2</h6></label>
-					</div>
-					<div class="form-group">
-						<label><h6>Foto Dengan Rumah 3</h6></label>
+						<label><h6>Foto Rumah (Dapur)</h6></label>
 					</div>
 				</div>
 				<div class="upload">
 					<div>
 						<input name="transkrip" type="file">
 					</div>
-					<br>
-					<div>
+<!-- 					<div>
 						<input name="suratrekomendasi" type="file">
-					</div>
+					</div> -->
 					<br>
 					<div>
 						<input name="pendapatan_ot" type="file">

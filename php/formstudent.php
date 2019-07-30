@@ -92,7 +92,7 @@
 	//campaign 3
 	if(isset($_POST['btn_upload_docs'])){
 		$transkrip= new CURLFile($_FILES['transkrip']['tmp_name'],$_FILES['transkrip']['type'],$_FILES['transkrip']['name']);
-		$surat_rekomendasi = new CURLFile($_FILES['suratrekomendasi']['tmp_name'],$_FILES['suratrekomendasi']['type'],$_FILES['suratrekomendasi']['name']);
+		//$surat_rekomendasi = new CURLFile($_FILES['suratrekomendasi']['tmp_name'],$_FILES['suratrekomendasi']['type'],$_FILES['suratrekomendasi']['name']);
 		$pendapatan_ot = new CURLFile($_FILES['pendapatan_ot']['tmp_name'],$_FILES['pendapatan_ot']['type'],$_FILES['pendapatan_ot']['name']);
 		$foto1 = new CURLFile($_FILES['foto1']['tmp_name'],$_FILES['foto1']['type'],$_FILES['foto1']['name']);
 		$foto2 = new CURLFile($_FILES['foto2']['tmp_name'],$_FILES['foto2']['type'],$_FILES['foto2']['name']);
@@ -100,7 +100,7 @@
 
 		$studentDocs = array();
 	$studentDocs['transkrip'] = $transkrip;
-	$studentDocs['surat_rekomendasi']= $surat_rekomendasi;
+	//$studentDocs['surat_rekomendasi']= $surat_rekomendasi;
 	$studentDocs['pendapatan_ot']=$pendapatan_ot;
 	$studentDocs['foto1'] = $foto1;
 	$studentDocs['foto2'] = $foto2;
@@ -117,6 +117,16 @@
 		//echo $email;
 	}
 
+	if(isset($_POST['btn_edit_story'])){
+		$title = $_POST['title'];
+		$story = $_POST['story'];
+
+		$editStory =array();
+		$editStory['title'] = $title;
+		$editStory['story'] = $story;
+		editStory($editStory);
+	}
+
 	function submitPersonalInfo($data,$file){
 		$url1= "student.inacrop.com/updateForm/".$_SESSION['id_student'];
 		//$url2= "student.inacrop.com/postImages/".$_SESSION['id_student'];
@@ -124,7 +134,7 @@
 		//echo "you called me";
 		//$result2 = sendPostRequestWithFile($url2,$file);
 		$result_array=json_decode($result,true);
-		print_r($result_array);
+		//print_r($result_array);
 		//print_r($result_array);
 		//print_r($result2);
 		//echo $result_array['success'];
@@ -133,7 +143,8 @@
 			//continue to next 'form'
 			header("Location: ../pages/detailcampaign.php");
 		}else{
-			header("Location: http://www.google.com");
+			$_SESSION['error_message']=$result_array['message'];
+			header("Location: ../pages/personalinfo.php");
 		}
 	}
 
@@ -143,9 +154,12 @@
 		$result = sendPostRequestWithoutEncoding($url,$data);
 		$result_array=json_decode($result,true);//returns the campaign id
 		$_SESSION['id_campaign']=$result_array['data']['id'];//the campaign id
-		//print_r($result_array);
-		//print_r($_SESSION['id_campaign']);
-		header("Location: ../pages/story.php");
+		if($result_array['success']===true){
+			header("Location: ../pages/story.php");
+		}else{
+			$_SESSION['error_message']=$result_array['message'];
+			header("Location: ../pages/detailcampaign.php");
+		}
 	}
 
 	//campaign2
@@ -153,17 +167,24 @@
 		$url ="student.inacrop.com/updateStory/".$_SESSION['id_campaign'];//just dummy student id, actual id via session
 		$result = sendPostRequestWithoutEncoding($url,$data);
 		$result_array=json_decode($result,true);
-		//print_r($result_array);
-		header("Location: ../pages/uploaddocs.php");
+		if($result_array['success']===true){
+			header("Location: ../pages/uploaddocs.php");
+		}else{
+			$_SESSION['error_message']=$result_array['message'];
+			header("Location: ../pages/story.php");
+		}
 	}
 
 	function submitDocs($data){
 		$url ="student.inacrop.com/updateDokumen/".$_SESSION['id_campaign'];//dummy CAMPAIGN ID
 		$result = sendPostRequestWithoutEncoding($url,$data);
 		$result_array=json_decode($result,true);
-		//print_r($result_array);
-		//$_SESSION['campaign_success']="Sukses membuat campaign!";
-		header("Location: ../pages/thanks.php");
+		if($result_array['success']===true){
+			header("Location: ../pages/congratulations.php");
+		}else{
+			$_SESSION['error_message']=$result_array['message'];
+			header("Location: ../pages/uploaddocs.php");
+		}
 	}
 
 	function submitStudentEmail($email){
@@ -173,6 +194,18 @@
 		if($result_array['success']==true){
 			//$_SESSION['success_add_email']="Email tercatat, terimakasih atas partisipasinya!";
 			header("Location: ../pages/thanks.php");
+		}
+	}
+
+	function editStory($data){
+		$url = "student.inacrop.com/updateStory/".$_SESSION['id_campaign'];
+		$result = sendPostRequestWithoutEncoding($url,$data);
+		$result_array=json_decode($result,true);
+		if($result_array['success']==true){
+			header("Location: ../pages/studentdashboard.php");
+		}else{
+			$_SESSION['error_message']=$result_array['message'];
+			header("Location: ../pages/studentdashboard.php");
 		}
 	}
 ?>

@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html style="height: 100%">
 <head>
@@ -22,15 +25,16 @@
 					Belum Punya akun?Klik <a href="studentregister.php">disini</a>
 				</div>
 				<?php
-						session_start();
 						if(isset($_SESSION['login_error'])){
 							echo "<div class='alert alert-danger'>".$_SESSION['login_error']."</div>";
+							session_destroy();
 						}else if(isset($_SESSION['logout_notification'])){
 							echo "<div class='alert alert-success'>".$_SESSION['logout_notification']."</div>";
+							session_destroy();
 						}else if(isset($_SESSION['failed_login'])){
 							echo "<div class='alert alert-danger'>".$_SESSION['failed_login']."</div>";
+							session_destroy();
 						}
-						session_destroy();
 				?>
 				<form id="student_login" method="POST" action="../php/logic.php">
 					<div class="form-group">

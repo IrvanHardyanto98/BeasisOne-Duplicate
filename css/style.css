@@ -116,7 +116,6 @@
     display: inline-block;
     justify-content: center;
     padding:10px;
-    border-radius: 20px;
 }
 
 .student_photo img{
@@ -195,4 +194,11 @@
 
 .logo{
     font-size: 150%;
+}
+
+.nav-item a{
+    color: #212529;
+}
+.modal-backdrop{
+    z-index: -1;
 }

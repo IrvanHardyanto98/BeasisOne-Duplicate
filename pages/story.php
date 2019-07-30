@@ -20,7 +20,7 @@
 					<h1>Contoh</h1>
 					<h1>Video</h1>
 					<!--video icon goes here-->
-					<img src="../resources/images/video.png" height="50%" width="50%">
+					<img src="../resources/images/video.png" height="40%" width="100%">
 					<div style=" display: flex;">
 		  				<button class="btn btn-primary" style="width: 25%">kembali</button>
 		  				<div style="width: 50%"></div>
@@ -173,6 +173,11 @@
 			<div class="col-8" style="height: 100vh;overflow: auto;padding-top: 20px">
 				<h2><b>Ceritakan Kisah Kamu</b></h2>
 				<p>Tulis kisahmu dan ceritakan kepada para donatur kenapa kamu layak mendapatkan beasiswa ini</p>
+				<?php
+					if(isset($_SESSION['error_message'])){
+						echo "<div class='alert alert-danger'>".$_SESSION['error_message']."</div>";
+					}
+				?>
 				<form id="uploadForm" method="POST" action="../php/formstudent.php">
 					<div class="form-group">
 						<label><h6>Judul Campaign</h6></label>

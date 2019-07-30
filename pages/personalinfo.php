@@ -10,7 +10,17 @@ include('../php/session.php');
     <script src="../js/jquery-3.3.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
     <script src="../js/bootstrap.min.js"></script>
-   	<script src="../js/logic.js"></script>
+    <script>
+  		$(document).ready(function(){
+  			$("#pic-input").change(function(e){
+  				if($('#pic-input').get(0).files.length !== 0){
+  					$('#upload_warning').removeClass("alert-danger");
+  					$('#upload_warning').removeClass("alert-success");
+  					$('#upload_warning').html("berhasil mengupload "+e.target.files[0].name);
+  				}
+  			});
+  		});
+  	</script>
 </head>
 <body>
 	<div class="container" style="max-width: 100%"><!--main container-->
@@ -47,18 +57,26 @@ include('../php/session.php');
 				</div>	
 			</div>
 			<div class="col-8" style="height: 100vh;overflow: auto;padding-top: 20px">
-				<h2>Thank you for joining!</h2>
-				<p>First of all, tell us a bit about yourself</p>
+				<h2>Data diri personal</h2>
+				<p>Beritahu lebih lanjut mengenai diri kamu</p>
+				<?php
+					if(isset($_SESSION['error_message'])){
+						echo "<div class='alert alert-danger'>".$_SESSION['error_message']."</div>";
+					}
+				?>
 				<form id="student_personal_data_form" method="POST" action="../php/formstudent.php" enctype="multipart/form-data">
-					<div class="form-group">
-						<div class="align-items-start">
-							<label for="pic-input"><img src="../resources/images/btn1.JPG"/></label>
+					<div class="form-group d-flex" style="align-items: center">
+						<div class="d-flex" style="align-items: center">
+							<label style="margin:0" for="pic-input"><img src="../resources/images/btn1.JPG"/></label>
 							<input id="pic-input" name="foto" class="d-none" type="file" required>
-							<div class="d-inline-block">
-								<h6 class="d-inline-block" style="margin: 0">Foto Profil</h6><br>
-								<p class="d-inline-block" style="margin: 0">Give us your best shot!</p>
-							</div>							
 						</div>
+						<div class="d-inline-block">
+							<h6 class="d-inline-block" style="margin: 0">Foto Profil</h6><br>
+							<p class="d-inline-block" style="margin: 0">unggah foto profil kamu</p>
+						</div>
+						<div id="upload_warning" class="alert alert-danger">
+							Belum ada file yang diupload
+						</div>							
 					</div>
 					<div class="form-group">
 						<label><h6>Nama Lengkap</h6></label>
@@ -148,7 +166,7 @@ include('../php/session.php');
 						<label><h6>Nomor Telepon</h6></label>
 						<input type="text" name="notelp" class="form-control form-control-sm" required>
 					</div>
-					<input id="btn_student_personal_info" name="btn_student_personal_info" type="submit">
+					<input id="btn_student_personal_info" class="d-none" name="btn_student_personal_info" type="submit">
 				</form>
 				<div style="display:flex;justify-content: flex-end;padding-right: 1em">
 				<button class="btn_kembali">KEMBALI</button>

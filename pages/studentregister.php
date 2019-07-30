@@ -23,11 +23,6 @@
 					<h3>Daftar Sebagai Siswa</h3>
 					Sudah Punya akun?Klik <a href="studentlogin.php">disini</a>
 				</div>
-				<?php
-						session_start();
-						
-						session_destroy();
-				?>
 				<form id="student_register" method="POST" action="../php/logic.php">
 					<div class="form-group">
 						<input type="email" id="email" name="email" placeholder="Email" class="form-control">

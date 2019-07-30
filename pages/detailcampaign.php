@@ -45,6 +45,11 @@
 			<div class="col-8" style="height: 100vh;overflow: auto;padding-top: 20px">
 				<h2>Detail Campaign</h2>
 				<p>Isi detail info untuk campaign beasiswa yang kamu butuhkan</p>
+				<?php
+					if(isset($_SESSION['error_message'])){
+						echo "<div class='alert alert-danger'>".$_SESSION['error_message']."</div>";
+					}
+				?>
 				<form class="form_campaign" method="POST" action ="../php/formstudent.php">
 					<div class="form-group">
 						<label><h6>Durasi Pembiayaan</h6></label>
@@ -89,11 +94,13 @@
 						<input type="date" name="deadline" class="form-control form-control-sm">
 					</div>
 					<div class="form-group">
-						<label><h6>Jenis Campaign</h6></label>
+						<label><h6>Apakah kamu berminat berpartisipasi dalam program adopsi?</h6></label>
 						<select name="tipe">
-							<option value="0">Non-Adopsi</option>
-							<option value="1">Adopsi</option>
+							<option value="0">Tidak</option>
+							<option value="1">Ya</option>
 						</select>
+						<br>
+						<small>Apabila kamu memilih "YA", kamu wajib melampirkan surat keterangan miskin di bagian Upload Dokumen</small>
 					</div>
 					<input id="btn1" type="submit" name="btn_detail_campaign" class="d-none">
 				</form>
